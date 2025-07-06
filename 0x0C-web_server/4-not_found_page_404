@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
-# Install nginx web server
-
 # Update the package list on the system
 sudo apt -y update
 
@@ -28,7 +26,7 @@ sudo sed -i '/^}$/i \ \n\terror_page 404 /custom_404.html;' /etc/nginx/sites-ava
 # Configure the location and settings for the custom 404 page
 sudo sed -i '/^}$/i \ \n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}' /etc/nginx/sites-available/default
 
-# Start automatically nginxt at boot
+# Start automatically nginx at boot
 sudo systemctl enable nginx
 
 # Start nginx
